@@ -6,21 +6,22 @@ $(document).ready(function(){
     var one =  parseFloat($("input#side1").val());
     var two =  parseFloat($("input#side2").val());
     var three =  parseFloat($("input#side3").val());
+    var result;
 
     if ( isNaN(one) || isNaN(two) || isNaN(three)  ) {
-    alert("Enter valid input")
+    result = "Enter valid input";
     } else if ( one + two <= three || two + three <= one || one + three <=  two ){
-    alert("Not a Triangle");
+    result = "Not a Triangle";
     } else if ( one === two && two === three && one === three) {
-    alert("Equilateral");
+    result = "Equilateral";
     } else if ( one === two || two === three || three === one) {
-    alert("Isosceles");
+    result = "Isosceles";
     } else if ( one !== two && two !== three && one !== three ) {
-    alert("Scalene");
+    result = "Scalene";
     } else {
-      alert("Not a Number");
+    result = "Not a Number";
     }
-
+    $(".output").text(result);
     });
 
 
